@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Bank account opening form</title>
+		<link rel="stylesheet" type="text/css" href="Reg_style.css">
+		<script src="Reg_script.js"></script>
+	
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script> 
+				$(document).ready(function(){
+				  $("#flip1").click(function(){
+					$("#panel1").slideToggle("slow");
+					$("#panel2").slideUp("slow");
+				  });
+				});
+				
+				$(document).ready(function(){
+					$("#flip2").click(function(){
+					$("#panel2").slideToggle("slow");
+					$("#panel1").slideUp("slow");
+				  });
+				});
+		</script>
+		
+	</head>
+	
+	<body>
+	
+	<div class="container">
+	<form name="myForm" onsubmit="return validateForm()" method="post">
+		<header> Bank of India </header>
+		
+		
+		<section id="personal_info">
+		
+			<div id="flip1">Personal Details</div>
+			<br/>
+			<div id="panel1">
+				<label for="name">Name</label>
+				<input id="my_name" class="txt_box" type="text" placeholder="Enter Full Name"><br>
+				<span id="message1" style="color:red"></span><br/>
+			
+				<label for="fname">Father Name</label>
+				<input id="fname" class="txt_box" type="text" placeholder="Enter Father Name*"><br/>
+				<span id="message2" style="color:red"></span><br/>
+			
+			
+				<label for="mname">Mother Name</label>
+				<input id="mname" class="txt_box" type="text" placeholder="Enter Mother Name*">
+			
+				<label for="gender">Gender</label>
+				<input type="radio" name="gender" value="male"> Male<br>
+				<input type="radio" name="gender" value="female"> Female<br>
+				
+				<label for="email">Email Id</label>
+				<input id="email" class="txt_box" type="email" placeholder="Enter Email ID"/>
+				
+				
+				<label for="mob">Mobile Number</label>
+				<input id="phone" class="txt_box" type="phone" placeholder="Enter Mobile Number"/>
+		
+				</div>
+		
+		</section>
+		
+		<section id="address_info">
+		
+			<div id="flip2">Address Details</div>
+			<br/>
+			
+			<div id="panel2">
+			<select>
+				<option value="Select"> State </option>
+				<option value="01">Andhra Pradesh</option>
+				<option value="02">Assam</option>
+				<option value="03">Bihar</option>
+				<option value="04">Gujarat</option>
+				<option value="05">Maharashtra</option>
+				<option value="06">Manipur</option>
+			</select>
+			
+			<select>
+				<option value="Select"> District </option>
+				<option value="01">Ahmadnagar</option>
+				<option value="02">Beed</option>
+				<option value="03">Chandrapur</option>
+				<option value="04">Dhule</option>
+				<option value="05">Nashik</option>
+				<option value="06">Pune</option>
+				<option value="07">Satara</option>
+			</select>
+	
+			<textarea class="txt_box" rows="6" cols="70" name="txt_add" placeholder="Enter detail address"></textarea>
+			
+			</div>
+		</section>
+		
+		<input type="submit" name="submit" value="Submit" autocomplete="off">
+		
+		</form>
+		</div>
+		
+	<script type="text/javascript">
+		function validateForm() {
+			var x = document.getElementById("my_name").value;
+			var y = document.getElementById("fname").value;
+			if(x == "")
+			{
+				document.getElementById("message1").innerHTML =" * Please fill the username field";
+				return false;
+			}
+						
+			if(y == "")
+			{
+				document.getElementById("message2").innerHTML =" * Please fill the name field";
+				return false;
+			}
+
+		}
+	</script>
+		
+		
+	</body>
+</html>
+	
+	
+	
